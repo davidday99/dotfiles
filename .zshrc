@@ -9,6 +9,11 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+if [ -z "$SSH_AGENT_PID" ]; then
+    eval "$(ssh-agent -s)" &> /dev/null
+    ssh-add /home/david/.ssh/github_key &> /dev/null
+fi
+
 setxkbmap -option caps:swapescape
 
 bindkey -v
