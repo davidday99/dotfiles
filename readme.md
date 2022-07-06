@@ -5,7 +5,7 @@ Taken from https://www.atlassian.com/git/tutorials/dotfiles.
 ## Installation
 1. Clone into your home directory.
 ```
-git clone --bare <git-repo-url> $HOME/.cfg
+git clone --bare $git@github.com:davidday99/dotfiles.git HOME/.cfg
 ```
 2. Define the following alias in current shell scope.
 ```
