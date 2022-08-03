@@ -25,6 +25,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'preservim/NERDTree'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jiangmiao/auto-pairs'
+Plug 'lfv89/vim-interestingwords' 
 call plug#end()
 
 " Themes
