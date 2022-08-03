@@ -15,11 +15,10 @@ set shiftwidth=4
 " on pressing tab, insert 4 spaces
 set expandtab
 
+" Plugins
+call plug#begin()
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'preservim/NERDTree'
+call plug#end()
 
-" YCM Code Completion
-set rtp+=~/.vim/pack/YouCompleteMe
-set completeopt-=preview
-" Git Switcher
-set rtp+=~/.vim/pack/git-switcher.vim
-
-set rtp+=~/.vim/pack/vendor/start/nerdcommenter
+let g:ycm_global_ycm_extra_conf="~/.vim/.ycm_extra_conf.py"
