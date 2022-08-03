@@ -15,6 +15,10 @@ set shiftwidth=4
 " on pressing tab, insert 4 spaces
 set expandtab
 
+" keep code selected when in/outdenting
+vnoremap > >gv
+vnoremap < <gv
+
 " Plugins
 call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
@@ -23,5 +27,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+" Themes
 colorscheme dracula
 
