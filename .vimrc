@@ -19,7 +19,9 @@ set expandtab
 call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'preservim/NERDTree'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-let g:ycm_global_ycm_extra_conf="~/.vim/.ycm_extra_conf.py"
+colorscheme dracula
 
