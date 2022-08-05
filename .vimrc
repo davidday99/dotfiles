@@ -26,6 +26,7 @@ Plug 'preservim/NERDTree'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords' 
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 " Themes
