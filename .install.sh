@@ -4,7 +4,7 @@
 # curl -fsSL https://tinyurl.com/ddaydotfiles -o install.sh
 
 echo "cloning dotfiles into a bare git repo at $HOME"
-if ! git clone --bare git@github.com:davidday99/dotfiles.git $HOME/.cfg; then
+if ! git clone --bare https://github.com/davidday99/dotfiles.git $HOME/.cfg; then
     echo "failed to clone repo :("
     echo "exiting"
     exit
