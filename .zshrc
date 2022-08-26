@@ -133,5 +133,5 @@ setxkbmap -option caps:swapescape
 bindkey -v
 
 # Alias for dotfiles VCS, all others in ~/.oh-my-zsh/custom/
-alias config='/usr/bin/git --git-dir=/home/david/.cfg/ --work-tree=/home/david'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
