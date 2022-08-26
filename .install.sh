@@ -20,7 +20,7 @@ install_omz() {
     echo "setting up remote to personal OMZ repo"
     /usr/bin/git remote add personal $OMZ_repo
     echo "setting up remote to official OMZ repo"
-    /usr/bin/git remote add origin $OMZ_offical_upstream
+    /usr/bin/git remote set-url origin $OMZ_offical_upstream
     echo "setting default upstream to personal repo,\ 
     upstream updates will still work as normal"
     /usr/bin/git pull --set-upstream personal main
