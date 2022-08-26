@@ -5,26 +5,34 @@
 
 OMZ_repo=https://github.com/davidday99/oh-my-zsh-personal.git
 
-function config {
+config() {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 
-function install_omz {
-    if ! /usr/bin/git clone $HOME $OMZ_repo; then
-        echo "failed to install oh-my-zsh :(" 
+install_omz() {
+    if [ -d "$HOME/.oh-my-zsh" ]; then
+        echo "Oh-My-Zsh repo already exists"
+    else
+        if ! /usr/bin/git clone $OMZ_repo $HOME/.oh-my-zsh; then
+            echo "failed to install oh-my-zsh :(" 
+            echo "exiting"
+            exit
+        fi
+        pushd $HOME/.oh-my-zsh
+        /usr/bin/git remote add personal $OMZ_repo
+        popd
+    fi
+}
+
+if [ -d "$HOME/.cfg" ]; then
+    echo "config repo already exists"
+else
+    if ! /usr/bin/git clone --bare https://github.com/davidday99/dotfiles.git $HOME/.cfg; then
+        echo "failed to clone repo :("
         echo "exiting"
         exit
     fi
-    mv $HOME/.oh-my-zsh-personal $HOME/.oh-my-zsh
-    pushd $HOME/.oh-my-zsh
-    /usr/bin/git remote add personal $OMZ_repo
-}
-
-echo "cloning dotfiles into a bare git repo at $HOME"
-if ! /usr/bin/git clone --bare https://github.com/davidday99/dotfiles.git $HOME/.cfg; then
-    echo "failed to clone repo :("
-    echo "exiting"
-    exit
+    echo "successfully cloned config repo"
 fi
 
 # May need to back up and move existing configurations.
@@ -44,7 +52,7 @@ fi
 config config --local status.showUntrackedFiles no
 
 # Install Oh My Zsh
-if [ ! -d "~/.oh-my-zsh" ]; then
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
     install_omz
 fi
 
