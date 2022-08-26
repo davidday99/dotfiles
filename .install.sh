@@ -64,7 +64,7 @@ fi
 config config --local status.showUntrackedFiles no
 
 # Clone Oh My Zsh
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
+if [ -d "$HOME/.oh-my-zsh" ]; then
     echo "Oh-My-Zsh repo already exists"
 else        
     install_omz
