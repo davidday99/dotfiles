@@ -19,9 +19,16 @@ set expandtab
 vnoremap > >gv
 vnoremap < <gv
 
+
+" use ctrl-[hjkl] to select active split
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+
 " Plugins
 call plug#begin()
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' } "
 Plug 'preservim/NERDTree'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jiangmiao/auto-pairs'
@@ -31,4 +38,11 @@ call plug#end()
 
 " Themes
 colorscheme dracula
+
+" YCM Configurations
+let g:ycm_confirm_extra_conf = 0
+
+let g:ycm_semantic_triggers = {
+  \   'c': [ 're!.' ],
+  \ }
 
