@@ -30,6 +30,7 @@
 
 from distutils.sysconfig import get_python_inc
 import platform
+import os
 import os.path as p
 import subprocess
 
@@ -39,6 +40,7 @@ DIR_OF_WATCHDOG_DEPS = p.join( DIR_OF_THIRD_PARTY, 'watchdog_deps' )
 SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]
 
 database = None
+project_cwd = os.getcwd() 
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
@@ -61,7 +63,7 @@ flags = [
 'c',
 get_python_inc(),
 '-I',
-'inc',
+project_cwd + '/inc',
 '-I',
 '/usr/include',
 '--std=c99',
