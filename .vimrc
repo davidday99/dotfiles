@@ -51,3 +51,7 @@ let g:ycm_confirm_extra_conf = 0
   "\   'c': [ 're!.' ],
   "\ }
 
+" Autogenerate Ctags on file write to *.c/*.h files
+set tags=./.tags,.tags
+autocmd BufWritePost *.c,*.h silent! !ctags -R -f .tags &
+
