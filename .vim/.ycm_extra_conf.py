@@ -38,9 +38,10 @@ DIR_OF_THIS_SCRIPT = p.abspath( p.dirname( __file__ ) )
 DIR_OF_THIRD_PARTY = p.join( DIR_OF_THIS_SCRIPT, 'third_party' )
 DIR_OF_WATCHDOG_DEPS = p.join( DIR_OF_THIRD_PARTY, 'watchdog_deps' )
 SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]
+PROJECT_CWD = os.getcwd() + '/'
+INCLUDE_FOLDERS = [PROJECT_CWD + 'inc/', 'usr/include',]
 
 database = None
-project_cwd = os.getcwd() 
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
@@ -62,10 +63,7 @@ flags = [
 '-x',
 'c',
 get_python_inc(),
-'-I',
-project_cwd + '/inc',
-'-I',
-'/usr/include',
+*['-I' + i for i in INCLUDE_FOLDERS],
 '--std=c99',
 ]
 
