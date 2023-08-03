@@ -33,7 +33,7 @@ cnoremap <C-J> <Down>
 
 " Plugins
 call plug#begin()
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' } "
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --all' } "
 Plug 'preservim/NERDTree'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jiangmiao/auto-pairs'
@@ -42,6 +42,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/markonm/traces.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
+
+
+" YCM Mappings
+nnoremap <Leader>g :YcmCompleter GoTo<CR>
 
 
 " Themes
