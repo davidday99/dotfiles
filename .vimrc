@@ -5,6 +5,9 @@ syntax on
 
 filetype plugin indent on
 
+" more powerful backspacing
+set backspace=2
+
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -19,15 +22,8 @@ set expandtab
 vnoremap > >gv
 vnoremap < <gv
 
-
-" use ctrl-[hjkl] to select active split
-nnoremap <C-H> <C-W>h
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-
 " use Shift+tab and Tab to move tab left or right 
-nnoremap <C-I> :tabm +1<CR>
+nnoremap <Leader><C-I> :tabm +1<CR>
 nnoremap <S-Tab> :tabm -1<CR>
 
 " use ctrl-[jk] to navigate through command history
@@ -43,6 +39,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords' 
 Plug 'scrooloose/nerdcommenter'
+Plug 'https://github.com/markonm/traces.vim.git'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 
@@ -60,6 +58,6 @@ let g:ycm_confirm_extra_conf = 0
 
 
 " Autogenerate Ctags on file write to *.c/*.h files
-set tags=./.tags,.tags
-autocmd BufWritePost *.c,*.h silent! !ctags -R -f .tags &
+"set tags=./.tags,.tags
+"autocmd BufWritePost *.c,*.h silent! !ctags -R -f .tags &
 
