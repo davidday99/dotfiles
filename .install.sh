@@ -12,20 +12,10 @@ config() {
 
 install_omz() {
     if ! /usr/bin/git clone $OMZ_repo $HOME/.oh-my-zsh; then
-        echo "failed to install OMZ :(" 
+        echo "failed to install OMZ" 
         echo "exiting"
         exit
     fi
-    pushd $HOME/.oh-my-zsh
-    echo "setting up remote to personal OMZ repo"
-    /usr/bin/git remote add personal $OMZ_repo
-    echo "setting up remote to official OMZ repo"
-    /usr/bin/git remote set-url origin $OMZ_offical_upstream
-    echo "setting default upstream to personal repo,\ 
-    upstream updates will still work as normal"
-    /usr/bin/git pull --set-upstream personal main
-    popd
-    echo "successfully installed OMZ"
 }
 
 install_config() {
@@ -57,9 +47,9 @@ else
 fi
 
 # May need to back up and move existing configurations.
-if ! config checkout; then
-    backup_old_config_files
-fi
+# if ! config checkout; then
+#     backup_old_config_files
+# fi
 
 config config --local status.showUntrackedFiles no
 
@@ -70,4 +60,17 @@ else
     install_omz
 fi
 
+pushd $HOME/.oh-my-zsh
+echo "setting up remote to personal OMZ repo"
+/usr/bin/git remote add personal $OMZ_repo
+echo "setting up remote to official OMZ repo"
+/usr/bin/git remote set-url origin $OMZ_offical_upstream
+echo "setting default upstream to personal repo,\ 
+upstream updates will still work as normal"
+/usr/bin/git pull --set-upstream personal main
+popd
+echo "successfully added personal repo"
+
+# To install Vim-Plug, you're going to need to run the following command once .vim is set up.
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
