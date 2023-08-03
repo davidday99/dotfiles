@@ -73,6 +73,7 @@ HIST_STAMPS="mm/dd/yyyy"
 plugins=(
     git
     fzf
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
