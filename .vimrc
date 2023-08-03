@@ -46,6 +46,7 @@ call plug#end()
 
 " YCM Mappings
 nnoremap <Leader>g :YcmCompleter GoTo<CR>
+nnoremap <Leader>r :YcmCompleter RefactorRename  
 
 
 " Themes
