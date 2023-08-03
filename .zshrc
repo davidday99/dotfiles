@@ -118,14 +118,15 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+# Move ssh agent setup to .zprofile, seems to work.
 # Start ssh agent if it isn't already
-if [ -z "$SSH_AGENT_PID" ]; then
-    eval "$(ssh-agent -s)" &> /dev/null
-    ssh-add /home/david/.ssh/github_key &> /dev/null
-fi
+#if [ -z "$SSH_AGENT_PID" ]; then
+    #eval "$(ssh-agent -s)" &> /dev/null
+    #ssh-add /home/david/.ssh/github_key &> /dev/null
+#fi
 
 # And then kill it when the terminal is closed
-trap 'kill "$SSH_AGENT_PID"' INT TERM QUIT EXIT
+#trap 'kill "$SSH_AGENT_PID"' INT TERM QUIT EXIT
 
 # Swap caps-lock and esc for easier vim-use
 setxkbmap -option caps:swapescape
