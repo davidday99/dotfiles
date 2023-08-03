@@ -128,8 +128,6 @@ fi
 # And then kill it when the terminal is closed
 #trap 'kill "$SSH_AGENT_PID"' INT TERM QUIT EXIT
 
-# Swap caps-lock and esc for easier vim-use
-setxkbmap -option caps:swapescape
 # And enable vim-bindings in zsh
 bindkey -v
 
