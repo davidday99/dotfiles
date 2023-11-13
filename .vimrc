@@ -63,6 +63,9 @@ let g:ycm_confirm_extra_conf = 0
 
 
 " Autogenerate Ctags on file write to *.c/*.h files
-"set tags=./.tags,.tags
+set tags=./tags;,tags;
 "autocmd BufWritePost *.c,*.h silent! !ctags -R -f .tags &
+
+" Manual syntax associations
+au Bufread,BufNewFile *.dt set syntax=c
 
