@@ -139,3 +139,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 #### Added by green-restore install-tools
 autoload -Uz compinit && compinit
 ####
+
+# Disable Git autocompletions. The repos are just too large for it to be useful.
+compdef -d git
+
