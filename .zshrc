@@ -93,7 +93,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 # fi
 
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch arm64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -135,3 +135,7 @@ bindkey -v
 # Alias for dotfiles VCS, all others in ~/.oh-my-zsh/custom/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+
+#### Added by green-restore install-tools
+autoload -Uz compinit && compinit
+####
