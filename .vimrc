@@ -41,6 +41,7 @@ Plug 'lfv89/vim-interestingwords'
 Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/markonm/traces.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'embear/vim-localvimrc'
 call plug#end()
 
 
@@ -56,6 +57,9 @@ colorscheme dracula
 " YCM Configurations
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+
+" Localvimrc Configurations
+let g:localvimrc_ask = 0
 
 "let g:ycm_semantic_triggers = {
   "\   'c': [ 're!.' ],
